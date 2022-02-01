@@ -5,6 +5,6 @@ In this project we are building a food delivery system. Our objective is to take
 We hope to use several different NoSQL databases, including MongoDB, Redis and Neo4j.
 
 ## Use cases
-Use cases include assigning the optimal driver to a particular order, storing gps coordinates in a reliable and efficient manner and dealing with customer reviews of both the drivers and restaurants.
+Use cases include assigning the optimal driver to a particular order, storing GPS coordinates in a reliable and efficient manner, dealing with customer reviews and complaints, and making restaurant recommendations for the users.
 
 We will be using Python as the programming language to interact with the databases.
