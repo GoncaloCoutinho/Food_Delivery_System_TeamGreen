@@ -17,3 +17,5 @@ The other scripts execute the following commands:
     insertData.py -> inserts new drivers locations into Redis
     mongoInsert.py -> inserts a new order into mongodb
     mongoUpdate.py -> updates the status of the order and saves the drivers location.
+    commands.txt -> some commands in Redis to run on the terminal
+    requirements.txt -> list of packages used
