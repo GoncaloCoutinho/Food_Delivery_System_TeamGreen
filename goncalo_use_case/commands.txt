@@ -1,0 +1,17 @@
+Redis:
+
+start redis with my configs:        redis-server /etc/redis/6379.conf
+access database 1:                  redis-cli -n 1
+
+get all drivers:                    HGETALL drivers
+get all dates for driver 0:         ZRANGE 0 0 -1
+get geopos for driver 0:            GEOPOS 0 "2022-02-11 09:30:00"
+get last insert date for driver 0:  ZRANGE 0 -1 -1
+get all geo pos and dates:          GEORADIUS 0 0 0 22000 km WITHCOORD
+get dates and geo hash              ZRANGE 0 0 -1 WITHSCORES
+add a coordinate:                   GEOADD 0 longitude latitude timestamp
+
+
+Mongo Compass:
+
+Sort for most recent record: {date: -1}
