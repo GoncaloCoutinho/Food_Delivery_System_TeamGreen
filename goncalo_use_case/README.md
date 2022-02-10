@@ -13,9 +13,9 @@ Both utils folders contain initializations for the databases, I am using redis t
 The folders have all the functions that I wrote for inserting data into the databases, retrieving data, and exchanging data between both databases (see utils_redis/mongoDatabase function update_status).
 
 The other scripts execute the following commands:
-    driverPosition.py -> retrieves a drivers current location
-    insertData.py -> inserts new drivers locations into Redis
-    mongoInsert.py -> inserts a new order into mongodb
-    mongoUpdate.py -> updates the status of the order and saves the drivers location.
-    commands.txt -> some commands in Redis to run on the terminal
-    requirements.txt -> list of packages used
+* driverPosition.py -> retrieves a drivers current location
+* insertData.py -> inserts new drivers locations into Redis
+* mongoInsert.py -> inserts a new order into mongodb
+* mongoUpdate.py -> updates the status of the order and saves the drivers location.
+* commands.txt -> some commands in Redis to run on the terminal
+* requirements.txt -> list of packages used
