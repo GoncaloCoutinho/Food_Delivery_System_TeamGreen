@@ -2,7 +2,7 @@ import overpass
 import redis
 import csv
 
-r = redis.Redis(port=6379)
+r = redis.Redis(port=6379) #establishing redis connection
 api = overpass.API()
     
 #Query to get geospatial data from OpenStreetMap
@@ -15,14 +15,11 @@ area[name="Mannheim"]->.a;
 fmt = 'csv(::id,::lat,::lon,"name")'
 data = api.get(query, responseformat=fmt)
 deletedHeader = data.pop(0)
-#print(data[:5])
 
 with open('Driver_data.csv', newline='') as f:
     reader = csv.reader(f)
     driverData = list(reader)
     driverData.pop(0)
-
-#print(driverData)
 
 # Add driver location data in Redis Database
 for driverLocation in driverData :
@@ -50,6 +47,7 @@ def getDrivers(restName):
     loc = r.georadius("driver_location",restCoor[0][0],restCoor[0][1],1,unit="km",withcoord=True, withdist=True, sort="ASC")
     return loc
 
+# Assign nearest driver
 def assignDriver():
     drivers = getDrivers("Estragon")
     if (drivers[0][1] == 0.0):
@@ -57,6 +55,7 @@ def assignDriver():
     assignedDriver = drivers[0] 
     return assignedDriver
 
+# Calculates the estimated delivery time
 def calculateTime():
     assignedDriver = assignDriver()
     driverName = assignedDriver[0].decode()
@@ -65,6 +64,4 @@ def calculateTime():
     time = distance*speed
     print(time)
     return time, driverName
-
-#calculateTime()
  
