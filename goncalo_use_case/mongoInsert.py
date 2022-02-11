@@ -5,7 +5,7 @@ now = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
 # Insert a new order into mongodb
 new_order = {
-                'id': 1001,
+                'id': 1002,
                 'client_id': 201,
                 'driver_id': 0,
                 'restaurant_id': 104,
@@ -17,4 +17,4 @@ new_order = {
                 'payment_method': 'visa'
 }
 
-mongo.insert_row(mongo.orders, new_order)
+mongo.insert_value(mongo.orders, new_order)

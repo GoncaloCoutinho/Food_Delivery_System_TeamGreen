@@ -10,6 +10,6 @@ for index, row in df.iterrows():
     utils_redis.insert_coordinates(row['date'], row['longitude'], row['latitude'], row['driver_id'])
 
 # insert one row
-utils_redis.insert_coordinates('2022-02-11 10:59:59', 19.00000000, 60.00000000, 0)
+utils_redis.insert_coordinates('2022-02-11 11:06:38', 19.693450000, 60.12700000, 0)
 
 utils_redis.r.bgsave()
