@@ -6,3 +6,11 @@ This is achieved using a Redis database that will store the longitude, latitude 
 
 ## Sending out Delivery time notification
 After the driver is assigned, the estimated delivery time is calculated based on driver and customer location. After calculation of Delivery time, the redis's SUB/PUB is used to send out the notification with the help of an API in the form of SMS to customer's mobile number.
+
+## How to run
+- Load the code in any IDE.
+- Open terminal or Windows command prompt.
+  - Start Redis server: redis-server
+  - Run python3 subscribe.py
+  - Run python3 publish.py
+- After successfully running, you'll get SMS with delivery time (change the 'to' number in publish.py file to your own mobile number in order to get the message)
